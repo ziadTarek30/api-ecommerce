@@ -92,7 +92,6 @@ The API will be available at `http://localhost:<PORT>` (default: `http://localho
 |---|---|---|
 | `PORT` | Port the server listens on | `3000` |
 | `MONGO_URI` | MongoDB connection string | `mongodb://localhost:27017/ecommerce` |
-| `JWT_SECRET` | Secret key for signing JWTs | `your_super_secret_key` |
 | `NODE_ENV` | App environment | `development` or `production` |
 
 > ⚠️ Never commit your `.env` file. It is already listed in `.gitignore`.
@@ -101,21 +100,6 @@ The API will be available at `http://localhost:<PORT>` (default: `http://localho
 
 ## API Endpoints
 
-### Auth
-| Method | Endpoint | Description |
-|---|---|---|
-| POST | `/api/auth/register` | Register a new user |
-| POST | `/api/auth/login` | Login and receive a token |
-
-### Products
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/products` | Get all products |
-| GET | `/api/products/:id` | Get a single product |
-| POST | `/api/products` | Create a product *(auth required)* |
-| PUT | `/api/products/:id` | Update a product *(auth required)* |
-| DELETE | `/api/products/:id` | Delete a product *(auth required)* |
-
 ### Orders
 | Method | Endpoint | Description |
 |---|---|---|
@@ -123,14 +107,6 @@ The API will be available at `http://localhost:<PORT>` (default: `http://localho
 | GET | `/api/orders/:id` | Get a single order *(auth required)* |
 | POST | `/api/orders` | Place a new order *(auth required)* |
 | PUT | `/api/orders/:id` | Update order status *(auth required)* |
-
-### Users
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/users` | Get all users *(admin only)* |
-| GET | `/api/users/:id` | Get user profile *(auth required)* |
-| PUT | `/api/users/:id` | Update user profile *(auth required)* |
-| DELETE | `/api/users/:id` | Delete a user *(admin only)* |
 
 ---
 
@@ -151,8 +127,3 @@ The API will be available at `http://localhost:<PORT>` (default: `http://localho
 | `npm start` | Start the server (production) |
 | `npm run dev` | Start with nodemon (development) |
 
----
-
-## License
-
-ISC
