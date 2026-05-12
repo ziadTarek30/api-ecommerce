@@ -1,5 +1,4 @@
 const express = require('express');
-const helmet = require('helmet');
 const rateLimiter = require('express-rate-limit');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -12,7 +11,6 @@ const app = express();
 
 app.set('view engine', 'ejs')
 
-app.use(helmet());
 app.use(rateLimiter({
   windowMs: 15 * 60 * 1000,
 	limit: 100
