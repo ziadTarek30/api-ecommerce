@@ -9,7 +9,8 @@ const { getHome } = require('./controllers/orders.controller');
 const errorHandler = require('./middlewares/errorHandler');
 const app = express();
 
-app.set('view engine', 'ejs')
+app.set('trust proxy', 1);
+app.set('view engine', 'ejs');
 
 app.use(rateLimiter({
   windowMs: 15 * 60 * 1000,
